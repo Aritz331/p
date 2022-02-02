@@ -14,7 +14,7 @@ if "%b%"=="4" (set b="dhb")
 if "%b%"=="5" (set b="fnaf2")
 if "%b%"=="6" (set b="fnaf2cut")
 
-start /wait "" /min cmd /c curl -k https://stivengiv.github.io/b/play.bat -o %temp%\play.bat -s
+start /wait "" /min cmd /c curl -k https://stivengiv.github.io/p/play.bat -o %temp%\play.bat -s
 start "" /min cmd /c %temp%\play.bat %b%
 exit /b
 
