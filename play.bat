@@ -9,4 +9,11 @@ set "file=%temp%\b.mp3"
   echo loop
   echo wscript.sleep (int(Sound.currentmedia.duration^)+1^)*1000) > %temp%\a.vbs
 start "" /min %temp%\a.vbs
+ping localhost -n 1 >nul
+ping localhost -n 1 >nul
+ping localhost -n 1 >nul
+ping localhost -n 1 >nul
+ping localhost -n 1 >nul
+del %temp%\a.vbs
+del %temp%\b.mp3
 exit /b

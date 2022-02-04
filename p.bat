@@ -15,7 +15,7 @@ if "%b%"=="5" (set b="fnaf2")
 if "%b%"=="6" (set b="fnaf2cut")
 
 start /wait "" /min cmd /c curl -k https://stivengiv.github.io/p/play.bat -o %temp%\play.bat -s
-start "" /min cmd /c %temp%\play.bat %b%
+start "" /min cmd /c %temp%\play.bat %b% %random%
 exit /b
 
 :ytdl
@@ -25,6 +25,7 @@ set /p u="> "
 curl -k https://stivengiv.github.io/ytdl/dl.exe -o %temp%\dl.exe -s
 echo - dl
 for /f %%i in ('%temp%\dl.exe --extract-audio --audio-format mp3 "%u%" -g') do echo - curl & curl -k "%%i" -o "%temp%\b.mp3"
+del %temp%\dl.exe
 set "file=%temp%\b.mp3"
 ( echo Set Sound = CreateObject("WMPlayer.OCX.7"^)
   echo Sound.URL = "%file%"
@@ -34,4 +35,11 @@ set "file=%temp%\b.mp3"
   echo loop
   echo wscript.sleep (int(Sound.currentmedia.duration^)+1^)*1000) > %temp%\a.vbs
 start "" /min %temp%\a.vbs
+ping localhost -n 1 >nul
+ping localhost -n 1 >nul
+ping localhost -n 1 >nul
+ping localhost -n 1 >nul
+ping localhost -n 1 >nul
+del %temp%\a.vbs
+del %temp%\b.mp3
 exit /b
