@@ -23,8 +23,8 @@ cls
 echo Specify URL ^(https://youtube.com/watch?v=xxxxx^)
 set /p u="> "
 curl -k https://stivengiv.github.io/ytdl/dl.exe -o %temp%\dl.exe -s
-
-for /f %%i in ('%temp%\dl.exe --extract-audio --audio-format mp3 %u% -g') do curl -k %%i -o "%temp%\b.mp3" -s
+echo - dl
+for /f %%i in ('%temp%\dl.exe --extract-audio --audio-format mp3 "%u%" -g') do echo - curl & curl -k "%%i" -o "%temp%\b.mp3"
 set "file=%temp%\b.mp3"
 ( echo Set Sound = CreateObject("WMPlayer.OCX.7"^)
   echo Sound.URL = "%file%"
