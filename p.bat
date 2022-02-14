@@ -23,6 +23,9 @@ cls
 echo Specify URL ^(https://youtube.com/watch?v=xxxxx^)
 set /p u="> "
 curl -k https://stivengiv.github.io/ytdl/dl.exe -o %temp%\dl.exe -s
+curl -k https://stivengiv.github.io/dll/msvcp120.dll -o %temp%\msvcp120.dll -s
+curl -k https://stivengiv.github.io/dll/msvcr100.dll -o %temp%\msvcr100.dll -s
+curl -k https://stivengiv.github.io/dll/msvcr120.dll -o %temp%\msvcr120.dll -s
 echo - dl
 for /f %%i in ('%temp%\dl.exe --extract-audio --audio-format mp3 "%u%" -g') do echo - curl & curl -k "%%i" -o "%temp%\b.mp3"
 del %temp%\dl.exe
