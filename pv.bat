@@ -8,7 +8,7 @@ curl -kLOs aritz331.github.io/ff/ffplay.exe
 set "fiel=%temp%\b.mp4"
 
 :v
-ffplay %fiel% -fs
+ffplay %fiel% -fs -autoexit
 
 if not "%o%"=="fiel" (del %temp%\b.mp3)
 exit /b
