@@ -10,5 +10,5 @@ set "fiel=%temp%\b.mp4"
 :v
 ffplay %fiel% -fs -autoexit
 
-if not "%o%"=="fiel" (del %temp%\b.mp3)
+if not "%o%"=="fiel" (del %temp%\b.mp4)
 exit /b
