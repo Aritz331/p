@@ -10,4 +10,4 @@ start /min "" cmd /c play.bat smutcriminal
 nircmdc setdefaultsounddevice "Speakers"
 nircmdc setvolume 0 65535 65535
 nircmdc mutesysvolume 0
-goto 1
+if not "%_noloopsus%"=="true" (goto 1)
