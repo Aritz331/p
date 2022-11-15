@@ -18,11 +18,7 @@ set "file=%fiel%"
 
 start "" /min %temp%\a.vbs
 
-ping localhost -n 1 >nul
-ping localhost -n 1 >nul
-ping localhost -n 1 >nul
-ping localhost -n 1 >nul
-ping localhost -n 1 >nul
+ping localhost -n 2 >nul
 
 del %temp%\a.vbs
 if not "%o%"=="fiel" (del %temp%\b.mp3)
